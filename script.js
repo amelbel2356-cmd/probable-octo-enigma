@@ -21,7 +21,7 @@ function login() {
     if (users[password]) {
         currentUser = password;
         currentUserType = users[password].type;
-        localStorage.setItem('currentUser', password);
+        // إزالة حفظ الجلسة - سيطلب كلمة السر في كل مرة
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('chat-screen').style.display = 'flex';
         document.getElementById('username-display').textContent = users[password].name;
@@ -211,14 +211,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // التحقق من المستخدم المحفوظ
-    const savedUser = localStorage.getItem('currentUser');
-    if (savedUser && users[savedUser]) {
-        currentUser = savedUser;
-        currentUserType = users[savedUser].type;
-        document.getElementById('login-screen').style.display = 'none';
-        document.getElementById('chat-screen').style.display = 'flex';
-        document.getElementById('username-display').textContent = users[savedUser].name;
-        loadMessages();
-    }
+    // تم إزالة استرجاع الجلسة - سيطلب كلمة السر دائماً
 });
