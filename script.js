@@ -1,7 +1,7 @@
 
 // بيانات المستخدمين
 const users = {
-    'إيمان': { name: 'بنت', type: 'girl' },
+    'تسنيم': { name: 'بنت', type: 'girl' },
     'زاكي': { name: 'ولد', type: 'boy' }
 };
 
